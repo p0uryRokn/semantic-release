@@ -23,11 +23,5 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - name: Set Git credentials
-        run: |
-          git config user.name "p0uryRokn"
-          git config user.email "pouryrokn@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/p0uryRokn/semantic-release.git
-
       - name: Run semantic-release
         run: npx semantic-release
